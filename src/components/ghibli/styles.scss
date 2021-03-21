@@ -3,10 +3,18 @@
   margin: 1em auto;
   text-align: center;
   background-color: cornsilk;
-  height: 100vh;
+  height: 100%;
   padding: 1rem;
+  border-radius: 10px;
 }
 
 .app img {
   max-width: 150px;
+}
+ul {
+  display: flex;
+  justify-content: center;
+}
+li {
+  padding: 1rem 2rem;
 }

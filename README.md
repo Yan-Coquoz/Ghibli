@@ -30,11 +30,13 @@ par défaut l'API retourne 50 resultats, pour un maximum de 250.
 
 ---
 
-- le titre
-- la description
-- la date de sortie
-- sa durée
-- etc...
+- title
+- original_title
+- original_title_romanised
+- description
+- release_date
+- producer
+- director
 
 ---
 

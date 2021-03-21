@@ -1,10 +1,19 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable quotes */
 // == Import npm
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+
+import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
+
 import Title from "../Title";
-import Formulaire from "../From";
-// import { NavLink, RouterBrowser as Router } from "react-router";
+import Home from "../Home";
+import Film from "../Film";
+import People from "../People";
+import Specie from "../Specie";
+import Vehicle from "../Vehicle";
+import Location from "../Location";
+
+// import Formulaire from "../From";
 
 // == Import
 
@@ -12,41 +21,68 @@ import "./styles.scss";
 
 // == Composant
 const Ghibli = () => {
-  // retour de l'input
-  const [search, setSearch] = useState("");
-  // destination pour les requetes
-  const [direction, setDirection] = useState("");
+  const routes = [
+    {
+      path: "/",
+      component: Home,
+      title: "Home",
+    },
+    {
+      path: "/films",
+      component: Film,
+      title: "Films",
+    },
+    {
+      path: "/people",
+      component: People,
+      title: "People",
+    },
+    {
+      path: "/locations",
+      component: Location,
+      title: "Locations",
+    },
+    {
+      path: "/species",
+      component: Specie,
+      title: "Species",
+    },
+    {
+      path: "/vehicles",
+      component: Vehicle,
+      title: "Vehicles",
+    },
+  ];
 
-  const setSearchQuery = () => {
-    console.log(search);
-  };
+  const loadDatas = "https://ghibliapi.herokuapp.com";
 
-  // gestion de l'api
   useEffect(() => {
-    axios
-      .get("https://ghibliapi.herokuapp.com/people")
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => console.log(error));
+    console.log("je clean tous");
   });
 
   return (
     <div className="app">
       <Title />
-      {/* <Formulaire
-        onSubmitForm={setSearchQuery}
-        inputValue={search}
-        onChangeInput={setSearch}
-      /> */}
-      {/* <Router>
-      <NavLink to="/">Home</NavLink>
-      <NavLink exact to="/films">Films</NavLink>
-      <NavLink exact to="/people">People</NavLink>
-      <NavLink exact to="/locations">Locations</NavLink>
-      <NavLink exact to="/species">Species</NavLink>
-      <NavLink exact to="/vehicles">Vehicles</NavLink>
-  </Router> */}
+      <Router>
+        <ul>
+          {routes.map((road) => {
+            return (
+              <li key={road.title}>
+                <Link to={road.path}>{road.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        <Switch>
+          {routes.map((road) => {
+            return (
+              <Route key={road.title} exact path={road.path}>
+                <road.component lien={loadDatas} />
+              </Route>
+            );
+          })}
+        </Switch>
+      </Router>
     </div>
   );
 };
