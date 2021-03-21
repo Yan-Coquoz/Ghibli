@@ -1,15 +1,34 @@
 # Projet Chibli
 
-- faire des boutons en liens avec les routes
+- Faire des boutons en liens avec les routes
 
-- utilisation de react et ses routes, proptypes, axios, semantic ui.
+- Utilisation de react et ses routes, proptypes, axios, semantic ui.
 
-- posibilité de pagination.
+- Posibilité de pagination.
 
 Le fichier swagger.yaml est une base fictive de l'api.
 
-adresse du logo : `https://upload.wikimedia.org/wikipedia/fr/thumb/e/eb/Logo_Ghibli.svg/langfr-420px-Logo_Ghibli.svg.png`
+## installation du projet
 
+A la racine du projet, dans le terminal :
+
+> `yarn`
+
+### techno
+
+- html / scss
+- javascript
+- reactjs
+- react-router-dom
+- axios
+- semantic ui
+
+_adresse du logo :_ `https://upload.wikimedia.org/wikipedia/fr/thumb/e/eb/Logo_Ghibli.svg/langfr-420px-Logo_Ghibli.svg.png`
+
+<details>
+<summary>
+    Détails sur l'api
+</summary>
 Utilisation de l'API Chibli de base:
 
 ---
@@ -49,9 +68,7 @@ par défaut l'API retourne 50 resultats, pour un maximum de 250.
 - gender
 - eye_color
 - hair_color
-- films []
 - species
-- url
 
 ---
 
@@ -62,8 +79,6 @@ par défaut l'API retourne 50 resultats, pour un maximum de 250.
 - name
 - climate
 - terrain
-- residents []
-- films []
 
 ---
 
@@ -74,9 +89,6 @@ par défaut l'API retourne 50 resultats, pour un maximum de 250.
 - name
 - classification
 - eye_colors
-- url
-- people []
-- films []
 
 ---
 
@@ -87,5 +99,4 @@ par défaut l'API retourne 50 resultats, pour un maximum de 250.
 - name
 - description
 - vehicule_class
-- url
-- films []
+</details>
